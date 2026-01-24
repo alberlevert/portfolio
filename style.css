@@ -32,14 +32,20 @@ body{
 }
 .brand p{margin:0;color:var(--muted)}
 
-.menu{
-  position:fixed;
-  top:24px;
-  right:24px;
-  display:flex;
-  gap:14px;
-  font-size:14px;
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: flex-end;
+
+  padding: 28px 4%;
+  background: white;
+  z-index: 1000;
 }
+
 .menu {
   position: fixed;
   top: 0;
