@@ -242,3 +242,37 @@ body{
 .contact-icons a:hover {
   border-bottom: 1px solid var(--border);
 }
+.footer {
+  margin-top: 120px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 24px;
+}
+
+.icon {
+  color: #000;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: translateY(-2px);
+}
+
+/* Hover colors */
+.icon.instagram:hover {
+  color: #E1306C;
+}
+
+.icon.linkedin:hover {
+  color: #0077B5;
+}
+
+.icon.mail:hover {
+  color: #555;
+}
