@@ -3,6 +3,8 @@
   --text:#111111;
   --muted:#6b6b6b;
   --border: rgba(0,0,0,.10);
+
+  --menu-h: 88px;   
 }
 
 *{box-sizing:border-box}
@@ -26,9 +28,14 @@ body{
 }
 
 .hero{
-  display: grid;              
+  display: grid;
   gap: 24px;
-  padding: 100px 0 20px;     
+  padding-top: calc(var(--menu-h) + 40px);
+  padding-bottom: 20px;
+}
+
+main.container{
+  padding-top: calc(var(--menu-h) + 40px);
 }
 
 .brand h1{
@@ -45,15 +52,18 @@ body{
   left: 0;
   right: 0;
 
+  height: var(--menu-h);
+
   display: flex;
   justify-content: flex-end;
   align-items: center;
 
   gap: 28px;
-  padding: 20px 4%;     
+  padding: 0 4%;          
   background: #fff;
   z-index: 1000;
 }
+
 
 }
 .menu a.active{
