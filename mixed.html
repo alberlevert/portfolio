@@ -60,47 +60,8 @@
     <img class="lightbox-img" id="lightboxImg" alt="">
   </div>
 
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Hide broken images and show placeholders
-    document.querySelectorAll(".thumb img").forEach(img => {
-      const thumb = img.closest(".thumb");
-      function makePlaceholder(){
-        img.style.display = "none";
-        if (thumb) thumb.classList.add("no-img");
-      }
-      img.addEventListener("error", makePlaceholder);
-      if (!img.getAttribute("src")) makePlaceholder();
-    });
+ <script src="app.js?v=1"></script>
 
-    const lb = document.getElementById("lightbox");
-    const lbImg = document.getElementById("lightboxImg");
-    const lbClose = document.getElementById("lightboxClose");
-
-    document.querySelectorAll("[data-full]").forEach(card => {
-      card.addEventListener("click", (e) => {
-        e.preventDefault();
-        lbImg.src = card.getAttribute("data-full");
-        lb.classList.add("open");
-        lb.setAttribute("aria-hidden", "false");
-      });
-    });
-
-    function closeLb(){
-      lb.classList.remove("open");
-      lb.setAttribute("aria-hidden", "true");
-      lbImg.src = "";
-    }
-
-    lbClose.addEventListener("click", closeLb);
-    lb.addEventListener("click", (e) => {
-      if (e.target === lb) closeLb();
-    });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeLb();
-    });
-  });
-  </script>
 
 </body>
 </html>
