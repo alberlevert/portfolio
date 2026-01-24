@@ -24,8 +24,61 @@
       </div>
     </header>
 
-    <div class="section-title">Coming soon</div>
-    <p class="muted">We’ll add a gallery + lightbox here.</p>
+    <div class="section-title">Works</div>
+
+<section class="grid">
+  <a class="card" href="#" data-full="assets/collage/c01.jpg">
+    <div class="thumb"><img src="assets/collage/c01.jpg" alt="Collage 01"></div>
+    <div class="meta"><span class="title">Collage 01</span><span class="tag">Collage</span></div>
+  </a>
+
+  <a class="card" href="#" data-full="assets/collage/c02.jpg">
+    <div class="thumb"><img src="assets/collage/c02.jpg" alt="Collage 02"></div>
+    <div class="meta"><span class="title">Collage 02</span><span class="tag">Collage</span></div>
+  </a>
+
+  <a class="card" href="#" data-full="assets/collage/c03.jpg">
+    <div class="thumb"><img src="assets/collage/c03.jpg" alt="Collage 03"></div>
+    <div class="meta"><span class="title">Collage 03</span><span class="tag">Collage</span></div>
+  </a>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+  <img class="lightbox-img" id="lightboxImg" alt="">
+</div>
+
+<script>
+  const lb = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lightboxImg");
+  const lbClose = document.getElementById("lightboxClose");
+
+  document.querySelectorAll('[data-full]').forEach(card => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      const src = card.getAttribute('data-full');
+      lbImg.src = src;
+      lb.setAttribute('aria-hidden', 'false');
+      lb.classList.add('open');
+    });
+  });
+
+  function closeLb(){
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+    lbImg.src = "";
+  }
+
+  lbClose.addEventListener('click', closeLb);
+  lb.addEventListener('click', (e) => {
+    if (e.target === lb) closeLb();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLb();
+  });
+</script>
+
   </div>
 
 </body>
