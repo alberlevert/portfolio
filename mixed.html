@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Mixed media — Maria Ramonova</title>
-  <link rel="stylesheet" href="style.css?v=2" />
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
 
@@ -24,9 +24,83 @@
       </div>
     </header>
 
-    <div class="section-title">Coming soon</div>
-    <p class="muted">We’ll add a grid here (5 items).</p>
+    <div class="section-title">Works</div>
+
+    <section class="grid">
+      <a class="card" href="#" data-full="assets/mixed/m01.jpg">
+        <div class="thumb"><img src="assets/mixed/m01.jpg" alt="Mixed 01"></div>
+        <div class="meta"><span class="title">Mixed 01</span><span class="tag">Mixed</span></div>
+      </a>
+
+      <a class="card" href="#" data-full="assets/mixed/m02.jpg">
+        <div class="thumb"><img src="assets/mixed/m02.jpg" alt="Mixed 02"></div>
+        <div class="meta"><span class="title">Mixed 02</span><span class="tag">Mixed</span></div>
+      </a>
+
+      <a class="card" href="#" data-full="assets/mixed/m03.jpg">
+        <div class="thumb"><img src="assets/mixed/m03.jpg" alt="Mixed 03"></div>
+        <div class="meta"><span class="title">Mixed 03</span><span class="tag">Mixed</span></div>
+      </a>
+
+      <a class="card" href="#" data-full="assets/mixed/m04.jpg">
+        <div class="thumb"><img src="assets/mixed/m04.jpg" alt="Mixed 04"></div>
+        <div class="meta"><span class="title">Mixed 04</span><span class="tag">Mixed</span></div>
+      </a>
+
+      <a class="card" href="#" data-full="assets/mixed/m05.jpg">
+        <div class="thumb"><img src="assets/mixed/m05.jpg" alt="Mixed 05"></div>
+        <div class="meta"><span class="title">Mixed 05</span><span class="tag">Mixed</span></div>
+      </a>
+    </section>
   </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+    <img class="lightbox-img" id="lightboxImg" alt="">
+  </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Hide broken images and show placeholders
+    document.querySelectorAll(".thumb img").forEach(img => {
+      const thumb = img.closest(".thumb");
+      function makePlaceholder(){
+        img.style.display = "none";
+        if (thumb) thumb.classList.add("no-img");
+      }
+      img.addEventListener("error", makePlaceholder);
+      if (!img.getAttribute("src")) makePlaceholder();
+    });
+
+    const lb = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lightboxImg");
+    const lbClose = document.getElementById("lightboxClose");
+
+    document.querySelectorAll("[data-full]").forEach(card => {
+      card.addEventListener("click", (e) => {
+        e.preventDefault();
+        lbImg.src = card.getAttribute("data-full");
+        lb.classList.add("open");
+        lb.setAttribute("aria-hidden", "false");
+      });
+    });
+
+    function closeLb(){
+      lb.classList.remove("open");
+      lb.setAttribute("aria-hidden", "true");
+      lbImg.src = "";
+    }
+
+    lbClose.addEventListener("click", closeLb);
+    lb.addEventListener("click", (e) => {
+      if (e.target === lb) closeLb();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLb();
+    });
+  });
+  </script>
 
 </body>
 </html>
