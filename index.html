@@ -118,8 +118,37 @@
   </main>
 
   <footer class="container footer">
-    <p class="muted">© <span id="year"></span> Your Name</p>
-  </footer>
+  <div class="social">
+    <a href="mailto:hello@email.com" class="icon mail" aria-label="Email">
+      <!-- Mail -->
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <path d="M2 4h20v16H2z" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M2 4l10 9 10-9" fill="none" stroke="currentColor" stroke-width="2"/>
+      </svg>
+    </a>
+
+    <a href="https://instagram.com/" target="_blank" rel="noopener" class="icon instagram" aria-label="Instagram">
+      <!-- Instagram -->
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <circle cx="18" cy="6" r="1.5" fill="currentColor"/>
+      </svg>
+    </a>
+
+    <a href="https://linkedin.com/" target="_blank" rel="noopener" class="icon linkedin" aria-label="LinkedIn">
+      <!-- LinkedIn -->
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <rect x="2" y="2" width="20" height="20" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+        <line x1="7" y1="9" x2="7" y2="17" stroke="currentColor" stroke-width="2"/>
+        <circle cx="7" cy="6" r="1.5" fill="currentColor"/>
+        <path d="M11 17v-5c0-1.5 3-1.5 3 0v5" fill="none" stroke="currentColor" stroke-width="2"/>
+      </svg>
+    </a>
+  </div>
+
+  <p class="muted">© <span id="year"></span> Your Name</p>
+</footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
