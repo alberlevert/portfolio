@@ -164,3 +164,30 @@ body{
   line-height:44px;
   cursor:pointer;
 }
+/* Image placeholders (when files are not uploaded yet) */
+.thumb{
+  background: #f4f4f4;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.thumb img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+}
+
+.thumb img:not([src]), 
+.thumb img[src=""]{
+  display:none;
+}
+
+/* If image is missing/broken — hide it and keep placeholder */
+.thumb img{
+  font-size:0; /* prevents broken icon text spacing */
+}
+.thumb img[alt]{
+  color:transparent;
+}
