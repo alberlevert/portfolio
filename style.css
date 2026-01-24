@@ -40,10 +40,16 @@ body{
   gap:14px;
   font-size:14px;
 }
-.menu a{
-  text-decoration:none;
-  color:var(--text);
-  padding:6px 8px;
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background: white;      
+  z-index: 1000;         
+
+  padding: 20px 40px;
 }
 .menu a.active{
   border-bottom:1px solid var(--text);
