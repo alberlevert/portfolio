@@ -225,3 +225,20 @@ body{
 .link:hover{
   border-bottom-color:rgba(0,0,0,.35);
 }
+.contact-icons {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.contact-icons a {
+  font-size: 26px;
+  text-decoration: none;
+  color: var(--text);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+}
+
+.contact-icons a:hover {
+  border-bottom: 1px solid var(--border);
+}
