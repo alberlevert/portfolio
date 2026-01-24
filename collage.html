@@ -50,33 +50,37 @@
 </div>
 
 <script>
+document.addEventListener("DOMContentLoaded", () => {
   const lb = document.getElementById("lightbox");
   const lbImg = document.getElementById("lightboxImg");
   const lbClose = document.getElementById("lightboxClose");
 
-  document.querySelectorAll('[data-full]').forEach(card => {
-    card.addEventListener('click', (e) => {
+  if (!lb || !lbImg || !lbClose) return;
+
+  document.querySelectorAll("[data-full]").forEach(card => {
+    card.addEventListener("click", (e) => {
       e.preventDefault();
-      const src = card.getAttribute('data-full');
+      const src = card.getAttribute("data-full");
       lbImg.src = src;
-      lb.setAttribute('aria-hidden', 'false');
-      lb.classList.add('open');
+      lb.classList.add("open");
+      lb.setAttribute("aria-hidden", "false");
     });
   });
 
   function closeLb(){
-    lb.classList.remove('open');
-    lb.setAttribute('aria-hidden', 'true');
+    lb.classList.remove("open");
+    lb.setAttribute("aria-hidden", "true");
     lbImg.src = "";
   }
 
-  lbClose.addEventListener('click', closeLb);
-  lb.addEventListener('click', (e) => {
+  lbClose.addEventListener("click", closeLb);
+  lb.addEventListener("click", (e) => {
     if (e.target === lb) closeLb();
   });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLb();
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLb();
   });
+});
 </script>
 
   </div>
