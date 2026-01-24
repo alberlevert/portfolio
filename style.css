@@ -298,3 +298,13 @@ main.container{
 .icon.mail:hover {
   color: #face68;
 }
+.about-contacts{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.about-contacts a{
+  display: block;
+}
