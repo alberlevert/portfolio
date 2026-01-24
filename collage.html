@@ -51,6 +51,22 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+    // Hide broken images and show placeholders
+  document.querySelectorAll(".thumb img").forEach(img => {
+    const thumb = img.closest(".thumb");
+
+    function makePlaceholder(){
+      img.style.display = "none";
+      if (thumb) thumb.classList.add("no-img");
+    }
+
+    // if file missing
+    img.addEventListener("error", makePlaceholder);
+
+    // if src empty
+    if (!img.getAttribute("src")) makePlaceholder();
+  });
+
   const lb = document.getElementById("lightbox");
   const lbImg = document.getElementById("lightboxImg");
   const lbClose = document.getElementById("lightboxClose");
