@@ -312,45 +312,30 @@ main.container{
 .about-contacts a{
   display: block;
 }
-/* ===== Collage — Figma layout (single source of truth) ===== */
+/* ===== Collage — Figma (absolute, 1:1) ===== */
 
-.collage-figma{
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: 80px;
-  row-gap: 90px;
-  margin-top: 60px;
-  align-items: start;
+section.collage-figma{
+  position: relative;
+  width: 1022px;
+  height: 900px; /* временно, увеличим когда будут все плитки */
+  margin: 60px auto 0;
+  display: block;
+}
+
+/* pair34 не должен влиять вообще */
+section.collage-figma .pair34{
+  display: contents;
 }
 
 /* кликабельные элементы */
-.collage-item,
-.pair34 a{
+section.collage-figma .collage-item{
+  position: absolute;
+  overflow: hidden;
+  border-radius: 12px; /* если не нужно — поставь 0 */
   display: block;
   text-decoration: none;
 }
 
-/* 1) сам контейнер коллажа */
-section.collage-figma{
-  position: relative;
-  width: 1022px;
-  height: 800px; /* временно */
-  margin: 0 auto;
-}
-
-/* 2) ВАЖНО: убираем влияние обёртки pair34, чтобы она не ломала раскладку */
-section.collage-figma .pair34{
-  position: static;
-}
-
-/* 3) базовые правила для всех плиток */
-section.collage-figma .collage-item{
-  position: absolute;
-  overflow: hidden;
-  border-radius: 12px; /* если в макете нет — поставь 0 */
-  display: block;
-}
-
 section.collage-figma .collage-item img{
   width: 100%;
   height: 100%;
@@ -358,58 +343,7 @@ section.collage-figma .collage-item img{
   display: block;
 }
 
-/* 4) координаты из Figma (то, что ты прислал) */
-section.collage-figma .c1{
-  left: 0px;
-  top: 140px;
-  width: 400px;
-  height: 560px;
-}
-
-section.collage-figma .c2{
-  left: 420px;
-  top: 200px;
-  width: 280px;
-  height: 420px;
-}
-
-section.collage-figma .c3{
-  left: 720px;
-  top: 200px;
-  width: 280px;
-  height: 420px;
-}
-/* === COLLAGE: hard override (ставь в самый низ style.css) === */
-
-section.collage-figma{
-  position: relative !important;
-  width: 1022px;
-  height: 720px; /* минимум, потом увеличим когда будут все плитки */
-  margin: 0 auto;
-  display: block !important;  /* чтобы никакой grid/flex не раскладывал контейнер */
-}
-
-/* обёртка не должна влиять на раскладку */
-section.collage-figma .pair34{
-  display: contents !important; /* дети считаются как прямые дети секции */
-}
-
-/* все элементы коллажа — абсолют внутри секции */
-section.collage-figma .collage-item{
-  position: absolute !important;
-  overflow: hidden;
-  display: block;
-  border-radius: 12px; /* если в макете нет — поставь 0 */
-}
-
-section.collage-figma .collage-item img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* === ТВОИ КООРДИНАТЫ (пока 3 штуки) === */
+/* координаты (то, что уже есть) */
 section.collage-figma .c1{ left: 0px;   top: 140px; width: 400px; height: 560px; }
 section.collage-figma .c2{ left: 420px; top: 200px; width: 280px; height: 420px; }
 section.collage-figma .c3{ left: 720px; top: 200px; width: 280px; height: 420px; }
