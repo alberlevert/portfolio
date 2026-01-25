@@ -330,43 +330,52 @@ main.container{
   text-decoration: none;
 }
 
-/* чтобы сами картинки вели себя нормально */
-.collage-figma img{
-  width: 100%;
-  height: auto;
+/* 1) сам контейнер коллажа */
+section.collage-figma{
+  position: relative;
+  width: 1022px;
+  height: 800px; /* временно */
+  margin: 0 auto;
+}
+
+/* 2) ВАЖНО: убираем влияние обёртки pair34, чтобы она не ломала раскладку */
+section.collage-figma .pair34{
+  position: static;
+}
+
+/* 3) базовые правила для всех плиток */
+section.collage-figma .collage-item{
+  position: absolute;
+  overflow: hidden;
+  border-radius: 12px; /* если в макете нет — поставь 0 */
   display: block;
 }
 
-/* чтобы все карточки были одной “фигмовской” ширины и стояли ровно */
-.collage-item{ 
-  max-width: 420px;
-  justify-self: center;
+section.collage-figma .collage-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-/* 1 ряд: 6 слева, (3 и 4 рядом) справа */
-.c6{ grid-column: 1 / span 4; grid-row: 1; }
-
-.pair34{
-  grid-column: 5 / span 8;
-  grid-row: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-.pair34 .collage-item{ max-width: none; }
-
-/* 2 ряд: 9, 2, 8 */
-.c9{ grid-column: 1 / span 4; grid-row: 2; }
-.c2{ grid-column: 5 / span 4; grid-row: 2; }
-.c8{ grid-column: 9 / span 4; grid-row: 2; }
-
-/* под 8: 1 и она “ниже” как в фигме */
-.c1{
-  grid-column: 9 / span 4;
-  grid-row: 3;
-  margin-top: 60px;
+/* 4) координаты из Figma (то, что ты прислал) */
+section.collage-figma .c1{
+  left: 0px;
+  top: 140px;
+  width: 400px;
+  height: 560px;
 }
 
-/* низ: 7 и 5 рядом ближе к центру */
-.c7{ grid-column: 4 / span 4; grid-row: 4; }
-.c5{ grid-column: 7 / span 4; grid-row: 4; }
+section.collage-figma .c2{
+  left: 420px;
+  top: 200px;
+  width: 280px;
+  height: 420px;
+}
+
+section.collage-figma .c3{
+  left: 720px;
+  top: 200px;
+  width: 280px;
+  height: 420px;
+}
