@@ -386,34 +386,108 @@ section.collage-figma{
 .row-1 > :nth-child(3){
   margin-top: 40px;
 }
-/* ===== HOME Featured grid (small - big - small) ===== */
+/* ===== HOME: layout like your sketch (explicit grid) ===== */
 
 .featured-grid{
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 16px;
+  gap: 28px;
+  align-items: start;
 }
 
+/* общий стиль карточки */
 .featured-grid .card{
-  grid-column: span 3; /* маленькие */
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
-.featured-grid .card.big{
-  grid-column: span 6; /* showreel большой */
-}
-
-/* чуть приятнее вид превью на главной */
+/* дефолтное превью */
 .featured-grid .thumb{
-  aspect-ratio: 16 / 9; /* вместо 16/10, выглядит “видео-шно” */
-  border-radius: 12px;
+  width: 100%;
+  border: 1px solid var(--border);
+  background: #f5f5f5;
+  overflow: hidden;
+  border-radius: 18px;
+  aspect-ratio: 16 / 9;
 }
 
-/* адаптив */
-@media (max-width: 900px){
-  .featured-grid .card.big{ grid-column: span 12; }
-  .featured-grid .card{ grid-column: span 6; }
+/* =========================
+   POSITIONS (desktop)
+   ========================= */
+
+/* left stack */
+.featured-grid .p1{ grid-column: 1 / span 3; }
+.featured-grid .p2{ grid-column: 1 / span 3; }
+
+/* showreel top-right big */
+.featured-grid .showreel{ grid-column: 5 / span 8; }
+
+/* mid row */
+.featured-grid .p3{ grid-column: 1 / span 6; }
+.featured-grid .p4{ grid-column: 8 / span 5; }
+
+/* lower mid */
+.featured-grid .p5{ grid-column: 2 / span 4; }
+.featured-grid .p6{ grid-column: 7 / span 6; }
+
+/* bottom big centered */
+.featured-grid .p7{ grid-column: 3 / span 8; }
+
+/* =========================
+   ASPECT RATIOS (to match sketch feel)
+   ========================= */
+
+.featured-grid .p1 .thumb,
+.featured-grid .p2 .thumb{
+  aspect-ratio: 4 / 3;
 }
 
-@media (max-width: 560px){
-  .featured-grid .card{ grid-column: span 12; }
+.featured-grid .showreel .thumb{
+  aspect-ratio: 21 / 9;
 }
+
+.featured-grid .p3 .thumb,
+.featured-grid .p6 .thumb{
+  aspect-ratio: 16 / 8;
+}
+
+.featured-grid .p4 .thumb,
+.featured-grid .p5 .thumb{
+  aspect-ratio: 3 / 4;
+}
+
+.featured-grid .p7 .thumb{
+  aspect-ratio: 16 / 6;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1100px){
+  .featured-grid .showreel{ grid-column: 1 / -1; }
+
+  .featured-grid .p1,
+  .featured-grid .p2,
+  .featured-grid .p3,
+  .featured-grid .p4,
+  .featured-grid .p5,
+  .featured-grid .p6,
+  .featured-grid .p7{
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 640px){
+  .featured-grid .p1,
+  .featured-grid .p2,
+  .featured-grid .p3,
+  .featured-grid .p4,
+  .featured-grid .p5,
+  .featured-grid .p6,
+  .featured-grid .p7{
+    grid-column: 1 / -1;
+  }
+}
+
