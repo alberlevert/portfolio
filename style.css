@@ -386,3 +386,34 @@ section.collage-figma{
 .row-1 > :nth-child(3){
   margin-top: 40px;
 }
+/* ===== HOME Featured grid (small - big - small) ===== */
+
+.featured-grid{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+.featured-grid .card{
+  grid-column: span 3; /* маленькие */
+}
+
+.featured-grid .card.big{
+  grid-column: span 6; /* showreel большой */
+}
+
+/* чуть приятнее вид превью на главной */
+.featured-grid .thumb{
+  aspect-ratio: 16 / 9; /* вместо 16/10, выглядит “видео-шно” */
+  border-radius: 12px;
+}
+
+/* адаптив */
+@media (max-width: 900px){
+  .featured-grid .card.big{ grid-column: span 12; }
+  .featured-grid .card{ grid-column: span 6; }
+}
+
+@media (max-width: 560px){
+  .featured-grid .card{ grid-column: span 12; }
+}
