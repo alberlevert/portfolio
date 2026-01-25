@@ -317,42 +317,58 @@ main.container{
 section.collage-figma{
   width: 1022px;
   margin: 60px auto 0;
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  column-gap: 60px;  /* подгони под макет */
-  row-gap: 80px;     /* подгони под макет */
-
-  align-items: start;
 }
 
-/* общий вид плиток */
-section.collage-figma .collage-item{
-  display: block;
-  overflow: hidden;
-  text-decoration: none;
+/* общие стили */
+.collage-item{
+  display:block;
+  overflow:hidden;
+  text-decoration:none;
+}
+.collage-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 
-/* картинки */
-section.collage-figma .collage-item img{
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-}
+/* вертикальные расстояния между рядами = 80px */
+.row{ margin-bottom: 80px; }
 
-/* Вторая строка: колонка (5 над 6) */
-section.collage-figma .stack{
-  display: grid;
-  gap: 40px; /* расстояние между 5 и 6 — подгони */
+/* ROW 1: x=20 | gap60 | gap20 | right=42 */
+.row-1{
+  display:grid;
+  grid-template-columns: 20px 320px 60px 280px 20px 280px 42px;
+  align-items:start;
 }
+.row-1 > :nth-child(1){ grid-column:2; height:460px; }
+.row-1 > :nth-child(2){ grid-column:4; height:400px; }
+.row-1 > :nth-child(3){ grid-column:6; height:400px; }
 
-/* Третья строка: 8 и 9 занимают по 1 колонке, а третья колонка пустая */
-section.collage-figma .i8{ grid-column: 1; }
-section.collage-figma .i9{ grid-column: 2; }
-
-/* optional: чтобы пустая 3-я колонка внизу не выглядела странно, можно центрировать 8/9 */
-section.collage-figma{
-  justify-items: stretch;
+/* ROW 2: x=40 | gap100 | gap80 | right=22 */
+.row-2{
+  display:grid;
+  grid-template-columns: 40px 260px 100px 180px 80px 340px 22px;
+  align-items:start;
 }
+.row-2 > :nth-child(1){ grid-column:2; height:560px; }
+.row-2 > .stack{ grid-column:4; }
+.row-2 > :nth-child(3){ grid-column:6; height:500px; }
+
+/* stack: gap между 5 и 6 = 20px */
+.stack{
+  display:grid;
+  gap:20px;
+}
+.stack > :nth-child(1){ height:260px; }
+.stack > :nth-child(2){ height:260px; }
+
+/* ROW 3: x=120 | gap20 | right=122 */
+.row-3{
+  display:grid;
+  grid-template-columns: 120px 380px 20px 380px 122px;
+  align-items:start;
+  margin-bottom:0;
+}
+.row-3 > :nth-child(1){ grid-column:2; height:520px; }
+.row-3 > :nth-child(2){ grid-column:4; height:520px; }
