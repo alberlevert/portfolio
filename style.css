@@ -170,11 +170,20 @@ main.container{
 .lightbox.open{display:flex}
 
 .lightbox-img{
-  max-width:min(1100px, 92vw);
-  max-height:88vh;
-  border:1px solid rgba(255,255,255,.18);
-  background:#111;
+  /* заставляем картинку занимать максимум окна */
+  max-width: min(1100px, 92vw);
+  max-height: 88vh;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  border: 1px solid rgba(255,255,255,.18);
+  background: #111;
+  display: block;
 }
+
 
 .lightbox-close{
   position:absolute;
