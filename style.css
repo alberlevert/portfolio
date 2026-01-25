@@ -379,3 +379,37 @@ section.collage-figma .c3{
   width: 280px;
   height: 420px;
 }
+/* === COLLAGE: hard override (ставь в самый низ style.css) === */
+
+section.collage-figma{
+  position: relative !important;
+  width: 1022px;
+  height: 720px; /* минимум, потом увеличим когда будут все плитки */
+  margin: 0 auto;
+  display: block !important;  /* чтобы никакой grid/flex не раскладывал контейнер */
+}
+
+/* обёртка не должна влиять на раскладку */
+section.collage-figma .pair34{
+  display: contents !important; /* дети считаются как прямые дети секции */
+}
+
+/* все элементы коллажа — абсолют внутри секции */
+section.collage-figma .collage-item{
+  position: absolute !important;
+  overflow: hidden;
+  display: block;
+  border-radius: 12px; /* если в макете нет — поставь 0 */
+}
+
+section.collage-figma .collage-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* === ТВОИ КООРДИНАТЫ (пока 3 штуки) === */
+section.collage-figma .c1{ left: 0px;   top: 140px; width: 400px; height: 560px; }
+section.collage-figma .c2{ left: 420px; top: 200px; width: 280px; height: 420px; }
+section.collage-figma .c3{ left: 720px; top: 200px; width: 280px; height: 420px; }
