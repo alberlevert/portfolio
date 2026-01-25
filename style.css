@@ -312,52 +312,47 @@ main.container{
 .about-contacts a{
   display: block;
 }
-/* ===== COLLAGE (FLOW / SCROLL, NO OVERLAP) ===== */
+/* ===== COLLAGE: GRID (layout like your mockup) ===== */
 
 section.collage-figma{
   width: 1022px;
   margin: 60px auto 0;
-}
 
-/* группы: каждая группа — своя сетка */
-section.collage-figma .collage-group{
   display: grid;
-  gap: 24px;
-  margin-bottom: 48px;
+  grid-template-columns: repeat(3, 1fr);
+
+  column-gap: 60px;  /* подгони под макет */
+  row-gap: 80px;     /* подгони под макет */
+
+  align-items: start;
 }
 
-/* 1) первые три вниз */
-section.collage-figma .g1{
-  grid-template-columns: 1fr;
-}
-
-/* 2) две в ряд */
-section.collage-figma .g2{
-  grid-template-columns: repeat(2, 1fr);
-}
-
-/* 3) четыре в ряд */
-section.collage-figma .g4{
-  grid-template-columns: repeat(4, 1fr);
-}
-
-/* плитки */
-section.collage-figma a.collage-item{
+/* общий вид плиток */
+section.collage-figma .collage-item{
   display: block;
   overflow: hidden;
-  border-radius: 12px;
   text-decoration: none;
 }
 
-/* картинки внутри */
-section.collage-figma a.collage-item > img{
+/* картинки */
+section.collage-figma .collage-item img{
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
 }
 
-/* чтобы высоты выглядели аккуратно (можешь менять) */
-section.collage-figma .g1 a.collage-item{ aspect-ratio: 4 / 3; }
-section.collage-figma .g2 a.collage-item{ aspect-ratio: 3 / 2; }
-section.collage-figma .g4 a.collage-item{ aspect-ratio: 1 / 1; }
+/* Вторая строка: колонка (5 над 6) */
+section.collage-figma .stack{
+  display: grid;
+  gap: 40px; /* расстояние между 5 и 6 — подгони */
+}
+
+/* Третья строка: 8 и 9 занимают по 1 колонке, а третья колонка пустая */
+section.collage-figma .i8{ grid-column: 1; }
+section.collage-figma .i9{ grid-column: 2; }
+
+/* optional: чтобы пустая 3-я колонка внизу не выглядела странно, можно центрировать 8/9 */
+section.collage-figma{
+  justify-items: stretch;
+}
