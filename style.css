@@ -347,3 +347,12 @@ section.collage-figma .collage-item img{
 section.collage-figma .c1{ left: 0px;   top: 140px; width: 400px; height: 560px; }
 section.collage-figma .c2{ left: 420px; top: 200px; width: 280px; height: 420px; }
 section.collage-figma .c3{ left: 720px; top: 200px; width: 280px; height: 420px; }
+/* === DEBUG: если это не сработает, значит CSS не применился === */
+section.collage-figma { outline: 5px solid red !important; }
+section.collage-figma .c1 { outline: 5px solid lime !important; }
+section.collage-figma .c2 { outline: 5px solid cyan !important; }
+section.collage-figma .c3 { outline: 5px solid yellow !important; }
+
+section.collage-figma { position: relative !important; display:block !important; }
+section.collage-figma .collage-item { position:absolute !important; }
+section.collage-figma .pair34 { display: contents !important; }
