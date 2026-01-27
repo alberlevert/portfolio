@@ -430,4 +430,26 @@ section.collage-figma{
   transform: translate(-50%, -50%) scale(1.03);
 }
 
-.featured-figma .card:hover .preview{ opacity:1; }
+/* FIX: make video fill and replace image layer */
+.featured-figma .thumb{
+  position: relative;
+}
+
+.featured-figma .preview{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 1;
+}
+
+.featured-figma .play-icon{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}
