@@ -466,4 +466,5 @@ section.collage-figma{
 }
 
 .featured-figma .card:hover .preview{ opacity:1; }
-.featured-figma .card:hover .thumb img{ opacity:0; }
+.featured-figma .card:hover .preview{ opacity:1; }
+
