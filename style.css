@@ -441,12 +441,12 @@ section.collage-figma{
 }
 
 /* coordinates */
-.v1 { left: 60px; top: 100px; width: 440px; height: 780px; }
-.v2 { left: 560px; top: 100px; width: 860px; height: 480px; }
-.v3 { left: 60px; top: 920px; width: 440px; height: 580px; }
-.v4 { left: 540px; top: 640px; width: 440px; height: 780px; }
-.v5 { left: 1020px; top: 640px; width: 400px; height: 200px; }
-.v6 { left: 1020px; top: 900px; width: 400px; height: 200px; }
-.v7 { left: 60px; top: 1540px; width: 440px; height: 240px; }
-.v8 { left: 540px; top: 1460px; width: 440px; height: 240px; }
-.v9 { left: 1020px; top: 1160px; width: 400px; height: 700px; }
+.v1 { left: 40px; top: 100px; width: 440px; height: 780px; }
+.v2 { left: 520px; top: 100px; width: 860px; height: 480px; }
+.v3 { left: 40px; top: 920px; width: 440px; height: 580px; }
+.v4 { left: 520px; top: 640px; width: 440px; height: 780px; }
+.v5 { left: 1000px; top: 640px; width: 400px; height: 200px; }
+.v6 { left: 1000px; top: 900px; width: 400px; height: 200px; }
+.v7 { left: 40px; top: 1540px; width: 440px; height: 240px; }
+.v8 { left: 520px; top: 1460px; width: 440px; height: 240px; }
+.v9 { left: 1000px; top: 1160px; width: 400px; height: 700px; }
