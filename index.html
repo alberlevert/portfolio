@@ -169,5 +169,28 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+  
+  <script>
+  document.querySelectorAll('.featured-figma .card').forEach(card => {
+    const v = card.querySelector('video.preview');
+    if (!v) return;
+
+    const start = async () => {
+      try {
+        v.currentTime = 0;
+        await v.play();
+      } catch (e) {}
+    };
+
+    const stop = () => {
+      v.pause();
+      v.currentTime = 0;
+    };
+
+    card.addEventListener('mouseenter', start);
+    card.addEventListener('mouseleave', stop);
+  });
+</script>
+
 </body>
 </html>
