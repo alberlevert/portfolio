@@ -450,3 +450,20 @@ section.collage-figma{
 .v7 { left: 40px; top: 1540px; width: 440px; height: 240px; }
 .v8 { left: 520px; top: 1460px; width: 440px; height: 240px; }
 .v9 { left: 1000px; top: 1160px; width: 400px; height: 700px; }
+
+/* hover preview video */
+.featured-figma .thumb{ position: relative; }
+
+.featured-figma .preview{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  pointer-events:none;
+  transition: opacity .18s ease;
+}
+
+.featured-figma .card:hover .preview{ opacity:1; }
+.featured-figma .card:hover .thumb img{ opacity:0; }
