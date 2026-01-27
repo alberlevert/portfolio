@@ -417,14 +417,6 @@ section.collage-figma{
 .v8 { left: 520px; top: 1460px; width: 440px; height: 240px; }
 .v9 { left: 1000px; top: 1160px; width: 400px; height: 700px; }
 
-/* hover preview video (poster always visible) */
-.featured-figma .preview{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
 /* optional: make play icon a bit stronger on hover */
 .featured-figma .card:hover .play-icon{
   transform: translate(-50%, -50%) scale(1.03);
