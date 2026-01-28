@@ -134,6 +134,14 @@ main.container{
   border:0;
 }
 
+.video-vertical{
+  max-width: 420px;          /* ширина как у phone */
+  margin: 0 auto;            /* центр */
+  aspect-ratio: 9 / 16;      /* вертикаль */
+  border-radius: 18px;       /* мягкие углы */
+  overflow: hidden;
+}
+
 /* Instagram video – phone format */
 .video.ig{
   max-width: 420px;      /* ширина смартфона */
