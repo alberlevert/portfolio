@@ -447,3 +447,33 @@ section.collage-figma{
 .featured-figma video.preview{
   pointer-events: none;
 }
+
+/* VIDEO — Figma fixed layout (1440) */
+.video-figma{
+  position: relative;
+  width: 1440px;
+  height: 1900px;
+  margin: 0 auto;
+}
+
+.video-figma .card{
+  position: absolute;
+}
+
+/* ===== ROW 1 ===== */
+.video-figma .vp10{ left:40px;  top:140px; width:660px; height:360px; }
+.video-figma .vp05{ left:740px; top:80px;  width:660px; height:360px; }
+
+/* ===== ROW 2 ===== */
+.video-figma .vp07{ left:40px;  top:480px; width:660px; height:360px; }
+.video-figma .vp11{ left:740px; top:480px; width:660px; height:360px; }
+
+/* ===== ROW 3 ===== */
+.video-figma .vp04{ left:40px;   top:880px; width:320px; height:560px; }
+.video-figma .vp12{ left:380px;  top:880px; width:320px; height:560px; }
+.video-figma .vp13{ left:740px;  top:880px; width:320px; height:560px; }
+.video-figma .vp09{ left:1080px; top:880px; width:320px; height:560px; }
+
+/* ===== ROW 4 ===== */
+.video-figma .vp14{ left:40px;  top:1480px; width:660px; height:360px; }
+.video-figma .vp06{ left:740px; top:1480px; width:660px; height:360px; }
