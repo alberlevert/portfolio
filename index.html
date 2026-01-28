@@ -219,5 +219,14 @@
   });
 </script>
 
+  <script>
+  document.querySelectorAll('.featured-figma video.preview').forEach(v => {
+    v.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+    });
+  });
+</script>
+
 </body>
 </html>
