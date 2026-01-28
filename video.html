@@ -126,5 +126,49 @@
 
   </div>
 
+  <script>
+  document.querySelectorAll('.video-figma .card').forEach(card => {
+    const v = card.querySelector('video.preview');
+    if (!v) return;
+
+    const reset = () => {
+      try { v.pause(); v.currentTime = 0; } catch(e) {}
+    };
+
+    card.addEventListener('mouseenter', async () => {
+      try {
+        if (v.readyState < 2) v.load();
+        v.currentTime = 0;
+        await v.play();
+      } catch(e) {}
+    });
+
+    card.addEventListener('mouseleave', reset);
+    window.addEventListener('blur', reset);
+  });
+</script>
+
+<script>
+  document.querySelectorAll('.video-figma .card').forEach(card => {
+    const v = card.querySelector('video.preview');
+    if (!v) return;
+
+    const reset = () => {
+      try { v.pause(); v.currentTime = 0; } catch(e) {}
+    };
+
+    card.addEventListener('mouseenter', async () => {
+      try {
+        if (v.readyState < 2) v.load();
+        v.currentTime = 0;
+        await v.play();
+      } catch(e) {}
+    });
+
+    card.addEventListener('mouseleave', reset);
+    window.addEventListener('blur', reset);
+  });
+</script>
+  
 </body>
 </html>
