@@ -509,3 +509,8 @@ section.collage-figma{
   object-fit: cover;
   display: block;
 }
+
+/* allow card click; video must not capture pointer */
+.video-figma video.preview{
+  pointer-events: none;
+}
