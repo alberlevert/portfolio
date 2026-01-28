@@ -442,3 +442,8 @@ section.collage-figma{
   z-index: 2;
   pointer-events: none;
 }
+
+/* video must NOT capture clicks */
+.featured-figma video.preview{
+  pointer-events: none;
+}
